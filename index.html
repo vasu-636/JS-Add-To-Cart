@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantu - Modern E-commerce Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">\
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-shopping-bag"></i> Mantu</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">All Products</a></li>
+                            <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+                            <li><a class="dropdown-item" href="#">Best Sellers</a></li>
+                            <li><a class="dropdown-item" href="#">Sale Items</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center">
+                    <div class="input-group me-3" style="width: 300px;">
+                        <input type="text" class="form-control" placeholder="Search products..." id="searchInput">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <a href="#" class="text-decoration-none me-3 position-relative" id="cartToggle"
+                        data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count position-absolute" id="cartCount">0</span>
+                    </a>
+
+                    <a href="#" class="text-decoration-none">
+                        <i class="far fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="cartOffcanvasLabel">Shopping Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div id="cartItems">
+                <p class="text-muted text-center">Your cart is empty</p>
+            </div>
+            <div class="offcanvas-footer mt-auto">
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Total:</span>
+                    <span id="cartTotal" class="fw-bold">$0.00</span>
+                </div>
+                <button class="btn btn-primary w-100" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-4">Discover Amazing Products</h1>
+                        <p class="lead mb-4">Shop the latest trends with unbeatable prices. Quality products delivered
+                            right to your door.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <button class="btn btn-primary btn-lg">Shop Now</button>
+                            <button class="btn btn-outline-light btn-lg">View Collection</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="text-center">
+                        <div
+                            style="width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px);">
+                            <i class="fas fa-shopping-bag" style="font-size: 8rem; opacity: 0.8;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h5>Free Shipping</h5>
+                        <p class="text-muted">Free shipping on orders over $50</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h5>Easy Returns</h5>
+                        <p class="text-muted">30 days return policy</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h5>24/7 Support</h5>
+                        <p class="text-muted">Customer support anytime</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h5>Secure Payment</h5>
+                        <p class="text-muted">100% secure transactions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="categories">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Shop by Category</h2>
+                <p class="text-muted">Explore our wide range of product categories</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h5>Fashion</h5>
+                        <p class="text-muted">Latest trends in clothing</p>
+                        <a href="#" class="btn btn-outline-primary">Shop Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h5>Electronics</h5>
+                        <p class="text-muted">Latest gadgets & tech</p>
+                        <a href="#" class="btn btn-outline-primary">Shop Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h5>Home & Garden</h5>
+                        <p class="text-muted">Beautiful home essentials</p>
+                        <a href="#" class="btn btn-outline-primary">Shop Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h5>Sports</h5>
+                        <p class="text-muted">Sports & fitness gear</p>
+                        <a href="#" class="btn btn-outline-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Featured Products</h2>
+                <p class="text-muted">Check out our best selling products</p>
+            </div>
+
+            <div class="row" id="productGrid">
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-primary" onclick="loadMoreProducts()">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <p>Get the latest updates on new products and special offers</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="email" class="form-control form-control-lg" placeholder="Enter your email">
+                        <button class="btn btn-outline-light" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Mantu Store</h5>
+                    <p>Your trusted online shopping destination with quality products and excellent service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="d-block py-1">About Us</a></li>
+                        <li><a href="#" class="d-block py-1">Contact Us</a></li>
+                        <li><a href="#" class="d-block py-1">Privacy Policy</a></li>
+                        <li><a href="#" class="d-block py-1">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="d-block py-1">Help Center</a></li>
+                        <li><a href="#" class="d-block py-1">Track Your Order</a></li>
+                        <li><a href="#" class="d-block py-1">Returns & Exchanges</a></li>
+                        <li><a href="#" class="d-block py-1">Shipping Info</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="d-block py-1"><i class="fas fa-map-marker-alt me-2"></i> 123 Store St, City, State
+                            12345</li>
+                        <li class="d-block py-1"><i class="fas fa-phone me-2"></i> (555) 123-4567</li>
+                        <li class="d-block py-1"><i class="fas fa-envelope me-2"></i> info@mantustore.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Mantu Store. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='24' fill='%23adb5bd'><rect width='40' height='24' rx='4' fill='%23ffffff'/><text x='20' y='16' text-anchor='middle' font-size='10' fill='%23000'>VISA</text></svg>"
+                        alt="Visa" class="me-2">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='24' fill='%23adb5bd'><rect width='40' height='24' rx='4' fill='%23ffffff'/><text x='20' y='16' text-anchor='middle' font-size='9' fill='%23000'>MC</text></svg>"
+                        alt="Mastercard" class="me-2">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='24' fill='%23adb5bd'><rect width='40' height='24' rx='4' fill='%23ffffff'/><text x='20' y='16' text-anchor='middle' font-size='8' fill='%23000'>PAYPAL</text></svg>"
+                        alt="PayPal">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
