@@ -1,5 +1,4 @@
 
-// Sample product data
 const products = [
     {
         id: 1,
@@ -89,7 +88,7 @@ let cart = [];
 let displayedProducts = 0;
 const productsPerLoad = 6;
 
-// --- LocalStorage Functions ---
+
 function saveCart() {
     localStorage.setItem('cartItems', JSON.stringify(cart));
 }
@@ -100,14 +99,12 @@ function loadCart() {
         cart = JSON.parse(storedCart);
     }
 }
-// --- End LocalStorage Functions ---
 
-// Load products
 function loadProducts(productsToDisplay = products, count = productsPerLoad) {
     const productGrid = document.getElementById('productGrid');
     const loadMoreButton = document.querySelector('.btn[onclick="loadMoreProducts()"]');
 
-    // If a search is active, clear the grid and display the filtered products
+    
     if (productsToDisplay !== products) {
         productGrid.innerHTML = '';
         productsToDisplay.forEach(product => {
@@ -120,7 +117,7 @@ function loadProducts(productsToDisplay = products, count = productsPerLoad) {
         return;
     }
 
-    // Normal loading logic
+
     const endIndex = Math.min(displayedProducts + count, productsToDisplay.length);
 
     for (let i = displayedProducts; i < endIndex; i++) {
@@ -227,22 +224,22 @@ function showToast(message) {
     }, 3000);
 }
 
-// --- NEW filterProducts FUNCTION ---
+
 function filterProducts(query) {
     const lowercaseQuery = query.toLowerCase();
     if (lowercaseQuery === '') {
-        // If query is empty, show all products
+      
         displayedProducts = 0;
         loadProducts(products);
     } else {
-        // Filter products based on the query
+     
         const filtered = products.filter(product =>
             product.name.toLowerCase().includes(lowercaseQuery)
         );
         loadProducts(filtered);
     }
 }
-// --- END NEW filterProducts FUNCTION ---
+
 
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -429,9 +426,9 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', animateOnScroll);
     setTimeout(animateOnScroll, 500);
 
-    // --- UPDATED Event Listener for Search Input ---
+    
     document.getElementById('searchInput').addEventListener('keyup', function (e) {
         filterProducts(e.target.value);
     });
-    // --- END UPDATED Event Listener ---
+    
 });
