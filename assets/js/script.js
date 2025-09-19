@@ -23,7 +23,7 @@ const products = [
         id: 3,
         name: "Premium Coffee Maker",
         price: 149.99,
-        oldPrice: 179.99,
+        oldPrice: null,
         image: "./assets/images/coffee.jpg",
         rating: 4.2
     },
@@ -44,7 +44,44 @@ const products = [
         image: "./assets/images/tws.jpg",
         sale: true,
         rating: 4.8
+    },
+    {
+        id: 6,
+        name: "Smart Phone",
+        price: 249.99,
+        oldPrice: 299.99,
+        image: "./assets/images/phone.webp",
+        sale: true,
+        rating: 4.5
+    },
+    {
+        id: 7,
+        name: "Laptop",
+        price: 2499.99,
+        oldPrice: 2999.99,
+        image: "./assets/images/laptop.jpg",
+        sale: true,
+        rating: 4.7
+    },
+    {
+        id: 8,
+        name: "Wireless Charger",
+        price: 149.99,
+        oldPrice: null,
+        image: "./assets/images/wirelesscharger.jpg",
+        sale: false,
+        rating: 4.6
+    },
+    {
+        id: 9,
+        name: "Laptop Table",
+        price: 149.99,
+        oldPrice: 200.00,
+        image: "./assets/images/table.webp",
+        sale: true,
+        rating: 4.6
     }
+
 
 ];
 
